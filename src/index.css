@@ -6,36 +6,37 @@
 /* CSS Custom Properties (Design Tokens) */
 :root {
   /* Background Colors */
-  --bg-primary: #0f172a;
-  --bg-card: #1e293b;
-  --bg-card-hover: #253349;
-  --bg-input: #0f172a;
-  --bg-sidebar: #0b1120;
+  --bg-primary: #0a0a0a;
+  --bg-card: #141414;
+  --bg-card-hover: #1c1c1c;
+  --bg-input: #0f0f0f;
+  --bg-sidebar: #050505;
 
   /* Brand Colors */
-  --color-green: #10b981;
-  --color-green-glow: rgba(16, 185, 129, 0.15);
-  --color-orange: #f97316;
-  --color-orange-glow: rgba(249, 115, 22, 0.15);
-  --color-yellow: #fbbf24;
-  --color-yellow-glow: rgba(251, 191, 36, 0.15);
+  --color-yellow: #facc15;
+  --color-yellow-glow: rgba(250, 204, 21, 0.15);
+  --color-orange: #eab308; /* Used as a darker yellow/gold for gradients */
+  --color-orange-glow: rgba(234, 179, 8, 0.15);
+  --color-green: #bef264; /* Lime green tint that fits yellow theme for positive progress */
+  --color-green-glow: rgba(190, 242, 100, 0.15);
   --color-red: #ef4444;
   --color-red-glow: rgba(239, 68, 68, 0.15);
-  --color-blue: #3b82f6;
-  --color-blue-glow: rgba(59, 130, 246, 0.15);
+  --color-blue: #60a5fa;
+  --color-blue-glow: rgba(96, 165, 250, 0.15);
 
   /* Text Colors */
-  --text-primary: #f1f5f9;
-  --text-secondary: #94a3b8;
-  --text-muted: #64748b;
+  --text-primary: #f4f4f5;
+  --text-secondary: #a1a1aa;
+  --text-muted: #71717a;
   --text-white: #ffffff;
 
   /* Border & Shadow */
-  --border-color: #334155;
+  --border-color: #27272a;
   --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.25);
-  --shadow-card-hover: 0 8px 32px rgba(0, 0, 0, 0.35);
-  --shadow-glow-green: 0 0 20px rgba(16, 185, 129, 0.2);
-  --shadow-glow-orange: 0 0 20px rgba(249, 115, 22, 0.2);
+  --shadow-card-hover: 0 8px 32px rgba(250, 204, 21, 0.05); /* Yellow tinted shadow */
+  --shadow-glow-green: 0 0 20px rgba(190, 242, 100, 0.2);
+  --shadow-glow-orange: 0 0 20px rgba(234, 179, 8, 0.2);
+  --shadow-glow-yellow: 0 0 20px rgba(250, 204, 21, 0.2);
 
   /* Sizing */
   --sidebar-width: 260px;
@@ -44,8 +45,8 @@
   --radius-xl: 1rem;
 
   /* Transitions */
-  --transition: all 0.2s ease;
-  --transition-slow: all 0.3s ease;
+  --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Reset & Base */
@@ -168,13 +169,13 @@ input, select, textarea {
 .sidebar-logo-icon {
   width: 40px;
   height: 40px;
-  background: linear-gradient(135deg, var(--color-orange), #fb923c);
+  background: linear-gradient(135deg, var(--color-yellow), var(--color-orange));
   border-radius: var(--radius-lg);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.25rem;
-  box-shadow: var(--shadow-glow-orange);
+  box-shadow: var(--shadow-glow-yellow);
 }
 
 .sidebar-logo-text h1 {
@@ -254,13 +255,13 @@ input, select, textarea {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--color-blue), #60a5fa);
+  background: linear-gradient(135deg, var(--color-yellow), var(--color-orange));
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 700;
   font-size: 0.85rem;
-  color: white;
+  color: #0b0b0b; /* Dark text for yellow bg */
 }
 
 .sidebar-user-info {
@@ -449,25 +450,25 @@ input, select, textarea {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--color-orange), #fb923c);
-  color: white;
-  box-shadow: 0 2px 12px rgba(249, 115, 22, 0.3);
+  background: linear-gradient(135deg, var(--color-yellow), var(--color-orange));
+  color: #050505; /* Black text on yellow button */
+  box-shadow: 0 2px 12px var(--color-yellow-glow);
 }
 
 .btn-primary:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 20px rgba(249, 115, 22, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(250, 204, 21, 0.4);
 }
 
 .btn-success {
-  background: linear-gradient(135deg, var(--color-green), #34d399);
-  color: white;
-  box-shadow: 0 2px 12px rgba(16, 185, 129, 0.3);
+  background: linear-gradient(135deg, var(--color-green), #84cc16);
+  color: #050505;
+  box-shadow: 0 2px 12px var(--color-green-glow);
 }
 
 .btn-success:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(163, 230, 53, 0.4);
 }
 
 .btn-danger {
@@ -477,7 +478,7 @@ input, select, textarea {
 }
 
 .btn-danger:hover {
-  transform: translateY(-1px);
+  transform: translateY(-2px);
   box-shadow: 0 4px 20px rgba(239, 68, 68, 0.4);
 }
 
@@ -595,7 +596,7 @@ input, select, textarea {
   position: absolute;
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, var(--color-orange-glow), transparent 70%);
+  background: radial-gradient(circle, var(--color-yellow-glow), transparent 70%);
   top: -100px;
   right: -100px;
 }
@@ -605,7 +606,7 @@ input, select, textarea {
   position: absolute;
   width: 300px;
   height: 300px;
-  background: radial-gradient(circle, var(--color-green-glow), transparent 70%);
+  background: radial-gradient(circle, var(--color-orange-glow), transparent 70%);
   bottom: -50px;
   left: -50px;
 }
@@ -631,14 +632,14 @@ input, select, textarea {
 .login-logo-icon {
   width: 60px;
   height: 60px;
-  background: linear-gradient(135deg, var(--color-orange), #fb923c);
+  background: linear-gradient(135deg, var(--color-yellow), var(--color-orange));
   border-radius: var(--radius-lg);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.75rem;
   margin: 0 auto 1rem;
-  box-shadow: var(--shadow-glow-orange);
+  box-shadow: var(--shadow-glow-yellow);
 }
 
 .login-logo h1 {
@@ -1400,3 +1401,12 @@ input, select, textarea {
   }
 }
 
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}

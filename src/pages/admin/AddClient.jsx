@@ -200,7 +200,7 @@ export default function AddClient() {
             </div>
             <div className="form-group">
               <label className="form-label" htmlFor="client-height">
-                Height (cm)
+                Height (in)
               </label>
               <input
                 id="client-height"

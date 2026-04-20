@@ -12,9 +12,14 @@ import ClientList from './pages/admin/ClientList'
 import AddClient from './pages/admin/AddClient'
 import EditClient from './pages/admin/EditClient'
 import ClientDetail from './pages/admin/ClientDetail'
+import GoalProgressAdmin from './pages/admin/GoalProgressAdmin'
+import WeeklyCheckinAdmin from './pages/admin/WeeklyCheckinAdmin'
 import ClientDashboard from './pages/client/Dashboard'
 import ClientProfile from './pages/client/Profile'
 import MeasurementHistory from './pages/client/MeasurementHistory'
+import ClientGoals from './pages/client/ClientGoals'
+import ClientCoachNotes from './pages/client/ClientCoachNotes'
+import WeeklyCheckinClient from './pages/client/WeeklyCheckinClient'
 
 /**
  * App Component - Main router configuration
@@ -50,6 +55,8 @@ export default function App() {
         <Route path="/admin/clients/add" element={<AddClient />} />
         <Route path="/admin/clients/:id" element={<ClientDetail />} />
         <Route path="/admin/clients/:id/edit" element={<EditClient />} />
+        <Route path="/admin/goals" element={<GoalProgressAdmin />} />
+        <Route path="/admin/checkins" element={<WeeklyCheckinAdmin />} />
       </Route>
 
       {/* Client Routes */}
@@ -62,7 +69,10 @@ export default function App() {
       >
         <Route path="/client/dashboard" element={<ClientDashboard />} />
         <Route path="/client/profile" element={<ClientProfile />} />
+        <Route path="/client/goals" element={<ClientGoals />} />
         <Route path="/client/measurements" element={<MeasurementHistory />} />
+        <Route path="/client/notes" element={<ClientCoachNotes />} />
+        <Route path="/client/checkins" element={<WeeklyCheckinClient />} />
       </Route>
 
       {/* Default redirect */}

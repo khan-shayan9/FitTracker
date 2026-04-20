@@ -81,52 +81,52 @@ export default function MeasurementHistory() {
                 {/* Chest */}
                 <div className="measurement-item">
                   <div className="m-label">Chest</div>
-                  <div className="m-value">{m.chest ?? '—'} cm</div>
+                  <div className="m-value">{m.chest ?? '—'} in</div>
                   {prev && m.chest != null && prev.chest != null && (
                     <div
                       className="m-change"
                       style={{ color: getMeasurementColor(m.chest, prev.chest) }}
                     >
-                      ({calcMeasurementChange(m.chest, prev.chest)} cm)
+                      ({calcMeasurementChange(m.chest, prev.chest)} in)
                     </div>
                   )}
                 </div>
                 {/* Waist */}
                 <div className="measurement-item">
                   <div className="m-label">Waist</div>
-                  <div className="m-value">{m.waist ?? '—'} cm</div>
+                  <div className="m-value">{m.waist ?? '—'} in</div>
                   {prev && m.waist != null && prev.waist != null && (
                     <div
                       className="m-change"
                       style={{ color: getMeasurementColor(m.waist, prev.waist) }}
                     >
-                      ({calcMeasurementChange(m.waist, prev.waist)} cm)
+                      ({calcMeasurementChange(m.waist, prev.waist)} in)
                     </div>
                   )}
                 </div>
                 {/* Arms */}
                 <div className="measurement-item">
                   <div className="m-label">Arms</div>
-                  <div className="m-value">{m.arms ?? '—'} cm</div>
+                  <div className="m-value">{m.arms ?? '—'} in</div>
                   {prev && m.arms != null && prev.arms != null && (
                     <div
                       className="m-change"
                       style={{ color: getMeasurementColor(m.arms, prev.arms) }}
                     >
-                      ({calcMeasurementChange(m.arms, prev.arms)} cm)
+                      ({calcMeasurementChange(m.arms, prev.arms)} in)
                     </div>
                   )}
                 </div>
                 {/* Thigh */}
                 <div className="measurement-item">
                   <div className="m-label">Thigh</div>
-                  <div className="m-value">{m.thigh ?? '—'} cm</div>
+                  <div className="m-value">{m.thigh ?? '—'} in</div>
                   {prev && m.thigh != null && prev.thigh != null && (
                     <div
                       className="m-change"
                       style={{ color: getMeasurementColor(m.thigh, prev.thigh) }}
                     >
-                      ({calcMeasurementChange(m.thigh, prev.thigh)} cm)
+                      ({calcMeasurementChange(m.thigh, prev.thigh)} in)
                     </div>
                   )}
                 </div>

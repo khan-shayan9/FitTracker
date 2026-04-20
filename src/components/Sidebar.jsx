@@ -66,6 +66,26 @@ export default function Sidebar({ isOpen, onClose }) {
               <span className="nav-icon">➕</span>
               <span>Add Client</span>
             </NavLink>
+
+            <NavLink
+              to="/admin/goals"
+              className={({ isActive }) =>
+                `sidebar-nav-link ${isActive ? 'active' : ''}`
+              }
+            >
+              <span className="nav-icon">🎯</span>
+              <span>Goal Progress</span>
+            </NavLink>
+
+            <NavLink
+              to="/admin/checkins"
+              className={({ isActive }) =>
+                `sidebar-nav-link ${isActive ? 'active' : ''}`
+              }
+            >
+              <span className="nav-icon">⭐</span>
+              <span>Check-ins</span>
+            </NavLink>
           </>
         ) : (
           <>
@@ -91,6 +111,16 @@ export default function Sidebar({ isOpen, onClose }) {
             </NavLink>
 
             <NavLink
+              to="/client/goals"
+              className={({ isActive }) =>
+                `sidebar-nav-link ${isActive ? 'active' : ''}`
+              }
+            >
+              <span className="nav-icon">🎯</span>
+              <span>My Goals</span>
+            </NavLink>
+
+            <NavLink
               to="/client/measurements"
               className={({ isActive }) =>
                 `sidebar-nav-link ${isActive ? 'active' : ''}`
@@ -98,6 +128,26 @@ export default function Sidebar({ isOpen, onClose }) {
             >
               <span className="nav-icon">📏</span>
               <span>My Progress</span>
+            </NavLink>
+
+            <NavLink
+              to="/client/notes"
+              className={({ isActive }) =>
+                `sidebar-nav-link ${isActive ? 'active' : ''}`
+              }
+            >
+              <span className="nav-icon">📝</span>
+              <span>Coach Notes</span>
+            </NavLink>
+
+            <NavLink
+              to="/client/checkins"
+              className={({ isActive }) =>
+                `sidebar-nav-link ${isActive ? 'active' : ''}`
+              }
+            >
+              <span className="nav-icon">⭐</span>
+              <span>Check-ins</span>
             </NavLink>
           </>
         )}

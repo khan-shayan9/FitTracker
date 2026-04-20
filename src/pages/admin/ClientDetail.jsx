@@ -15,6 +15,7 @@ import {
   generatePassword
 } from '../../utils/calculations'
 import ConfirmDialog from '../../components/ConfirmDialog'
+import AdminCoachNotes from './AdminCoachNotes'
 
 /**
  * Client Detail Page (Admin)
@@ -261,7 +262,7 @@ export default function ClientDetail() {
             <li>
               <span className="info-label">Height</span>
               <span className="info-value">
-                {client.height ? `${client.height} cm` : '—'}
+                {client.height ? `${client.height} in` : '—'}
               </span>
             </li>
             <li>
@@ -360,13 +361,13 @@ export default function ClientDetail() {
             </div>
             <div className="form-group">
               <label className="form-label" htmlFor="m-chest">
-                Chest (cm)
+                Chest (in)
               </label>
               <input
                 id="m-chest"
                 type="number"
                 className="form-input"
-                placeholder="e.g. 95"
+                placeholder="e.g. 40"
                 value={mChest}
                 onChange={(e) => setMChest(e.target.value)}
                 step="0.1"
@@ -377,13 +378,13 @@ export default function ClientDetail() {
           <div className="form-row">
             <div className="form-group">
               <label className="form-label" htmlFor="m-waist">
-                Waist (cm)
+                Waist (in)
               </label>
               <input
                 id="m-waist"
                 type="number"
                 className="form-input"
-                placeholder="e.g. 80"
+                placeholder="e.g. 34"
                 value={mWaist}
                 onChange={(e) => setMWaist(e.target.value)}
                 step="0.1"
@@ -392,13 +393,13 @@ export default function ClientDetail() {
             </div>
             <div className="form-group">
               <label className="form-label" htmlFor="m-arms">
-                Arms (cm)
+                Arms (in)
               </label>
               <input
                 id="m-arms"
                 type="number"
                 className="form-input"
-                placeholder="e.g. 35"
+                placeholder="e.g. 15"
                 value={mArms}
                 onChange={(e) => setMArms(e.target.value)}
                 step="0.1"
@@ -409,13 +410,13 @@ export default function ClientDetail() {
           <div className="form-row">
             <div className="form-group">
               <label className="form-label" htmlFor="m-thigh">
-                Thigh (cm)
+                Thigh (in)
               </label>
               <input
                 id="m-thigh"
                 type="number"
                 className="form-input"
-                placeholder="e.g. 55"
+                placeholder="e.g. 22"
                 value={mThigh}
                 onChange={(e) => setMThigh(e.target.value)}
                 step="0.1"
@@ -479,52 +480,52 @@ export default function ClientDetail() {
                   {/* Chest */}
                   <div className="measurement-item">
                     <div className="m-label">Chest</div>
-                    <div className="m-value">{m.chest ?? '—'} cm</div>
+                    <div className="m-value">{m.chest ?? '—'} in</div>
                     {prev && m.chest != null && prev.chest != null && (
                       <div
                         className="m-change"
                         style={{ color: getMeasurementColor(m.chest, prev.chest) }}
                       >
-                        ({calcMeasurementChange(m.chest, prev.chest)} cm)
+                        ({calcMeasurementChange(m.chest, prev.chest)} in)
                       </div>
                     )}
                   </div>
                   {/* Waist */}
                   <div className="measurement-item">
                     <div className="m-label">Waist</div>
-                    <div className="m-value">{m.waist ?? '—'} cm</div>
+                    <div className="m-value">{m.waist ?? '—'} in</div>
                     {prev && m.waist != null && prev.waist != null && (
                       <div
                         className="m-change"
                         style={{ color: getMeasurementColor(m.waist, prev.waist) }}
                       >
-                        ({calcMeasurementChange(m.waist, prev.waist)} cm)
+                        ({calcMeasurementChange(m.waist, prev.waist)} in)
                       </div>
                     )}
                   </div>
                   {/* Arms */}
                   <div className="measurement-item">
                     <div className="m-label">Arms</div>
-                    <div className="m-value">{m.arms ?? '—'} cm</div>
+                    <div className="m-value">{m.arms ?? '—'} in</div>
                     {prev && m.arms != null && prev.arms != null && (
                       <div
                         className="m-change"
                         style={{ color: getMeasurementColor(m.arms, prev.arms) }}
                       >
-                        ({calcMeasurementChange(m.arms, prev.arms)} cm)
+                        ({calcMeasurementChange(m.arms, prev.arms)} in)
                       </div>
                     )}
                   </div>
                   {/* Thigh */}
                   <div className="measurement-item">
                     <div className="m-label">Thigh</div>
-                    <div className="m-value">{m.thigh ?? '—'} cm</div>
+                    <div className="m-value">{m.thigh ?? '—'} in</div>
                     {prev && m.thigh != null && prev.thigh != null && (
                       <div
                         className="m-change"
                         style={{ color: getMeasurementColor(m.thigh, prev.thigh) }}
                       >
-                        ({calcMeasurementChange(m.thigh, prev.thigh)} cm)
+                        ({calcMeasurementChange(m.thigh, prev.thigh)} in)
                       </div>
                     )}
                   </div>
@@ -543,6 +544,8 @@ export default function ClientDetail() {
         onConfirm={handleDeleteMeasurement}
         onCancel={() => setDeleteTarget(null)}
       />
+
+      <AdminCoachNotes clientId={client.id} trainerId={user.id} />
 
       {/* Reset Password Modal */}
       {showResetModal && (

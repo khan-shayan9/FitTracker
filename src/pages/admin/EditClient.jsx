@@ -156,7 +156,7 @@ export default function EditClient() {
             </div>
             <div className="form-group">
               <label className="form-label" htmlFor="edit-height">
-                Height (cm)
+                Height (in)
               </label>
               <input
                 id="edit-height"

@@ -106,7 +106,7 @@ export default function ClientProfile() {
             <li>
               <span className="info-label">Height</span>
               <span className="info-value">
-                {client.height ? `${client.height} cm` : '—'}
+                {client.height ? `${client.height} in` : '—'}
               </span>
             </li>
             <li>
@@ -187,19 +187,19 @@ export default function ClientProfile() {
           <div className="measurement-values">
             <div className="measurement-item">
               <div className="m-label">Chest</div>
-              <div className="m-value">{latestMeasurement.chest ?? '—'} cm</div>
+              <div className="m-value">{latestMeasurement.chest ?? '—'} in</div>
             </div>
             <div className="measurement-item">
               <div className="m-label">Waist</div>
-              <div className="m-value">{latestMeasurement.waist ?? '—'} cm</div>
+              <div className="m-value">{latestMeasurement.waist ?? '—'} in</div>
             </div>
             <div className="measurement-item">
               <div className="m-label">Arms</div>
-              <div className="m-value">{latestMeasurement.arms ?? '—'} cm</div>
+              <div className="m-value">{latestMeasurement.arms ?? '—'} in</div>
             </div>
             <div className="measurement-item">
               <div className="m-label">Thigh</div>
-              <div className="m-value">{latestMeasurement.thigh ?? '—'} cm</div>
+              <div className="m-value">{latestMeasurement.thigh ?? '—'} in</div>
             </div>
           </div>
         ) : (
